@@ -1,6 +1,5 @@
-arr = []
-
 while True:
+    arr = []
     n = int(input())
     if n == -1 :
       break;
@@ -12,7 +11,5 @@ while True:
     if sum(arr) == n:
         result = ' + '.join(map(str,arr))
         print(n,'=',result)
-        arr = []
     else:
         print(n,'is NOT perfect.')
-        arr = []
