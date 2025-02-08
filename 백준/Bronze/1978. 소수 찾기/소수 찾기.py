@@ -1,14 +1,13 @@
 n = int(input())
-is_sosu = list(map(int,input().split()))
-sosu = []
+numbers = list(map(int,input().split()))
+count = 0
 
-for num in is_sosu:
-  list = []
-  for i in range(1,num+1):
-    if num%i == 0 :
-      list.append(i)
-  if len(list) == 2:
-    sosu.append(num)
-
-print(len(sosu))
+for num in numbers:
+  for i in range(2,num+1):
+    if num%i == 0:
+      if num == i:
+        count += 1
+      break
+    
+print(count)
   
