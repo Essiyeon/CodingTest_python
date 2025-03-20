@@ -1,28 +1,20 @@
 import sys
 
 n, m = map(int, sys.stdin.readline().split())
-not_hear = []
-not_see = []
-count = 0
+not_hear = set()
+not_see = set()
 
 for _ in range(n):
-  not_hear.append(sys.stdin.readline().rstrip())
-set_not_hear = set(not_hear)
+  not_hear.add(sys.stdin.readline().rstrip())
 for _ in range(m):
-  not_see.append(sys.stdin.readline().rstrip())
-set_not_see = set(not_see)
+  not_see.add(sys.stdin.readline().rstrip())
 
-not_hear_see = []
+not_hear_not_see = not_hear & not_see
+sorted_list = list(sorted(not_hear_not_see))
+print(len(sorted_list))
 
-for h in set_not_hear:
-  if h in set_not_see:
-    not_hear_see.append(h)
-    count += 1
-
-print(count)
-not_hear_see.sort()
-for i in range(len(not_hear_see)):
-  print(not_hear_see[i])
+for i in range(len(sorted_list)):
+  print(sorted_list[i])
     
 
 
