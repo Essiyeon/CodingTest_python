@@ -1,5 +1,4 @@
 t = int(input())
-count = 0
 
 def recursion(s, l, r, count):
   count += 1
